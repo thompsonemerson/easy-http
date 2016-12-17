@@ -1,5 +1,10 @@
 function http(options) {
 
+  const paserJson = (dataString) => JSON.parse
+
+  const parseString = (json) => JSON.stringify
+
+  
   return new Promise(function(resolve, reject) {
 
     var xhr = new XMLHttpRequest()
@@ -8,14 +13,6 @@ function http(options) {
     function ResponseError(status, message) {
       this.status = status
       this.message = message
-    }
-
-    function paserJson(dataString) {
-      return JSON.parse(dataString)
-    }
-
-    function parseString(json) {
-      return JSON.stringify(json)
     }
 
     function addHeaders(headers) {
